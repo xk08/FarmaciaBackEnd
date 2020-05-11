@@ -2,15 +2,18 @@ package com.meudominio.api.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.meudominio.api.entities.Drug;
 
+@CrossOrigin
 @RestController // Define como uma classe que faz interações REST
 public class DrugController {
 
+	@CrossOrigin
 	@RequestMapping(value = "/drugs", method = RequestMethod.GET) // Define a "rota" e marca
 	public List<Drug> listDrugs() {
 		
@@ -35,7 +38,14 @@ public class DrugController {
 		drug3.setAmount("12");
 		drug3.setImage("https://www.sansilfarma.com.br/BACKOFFICE/Uploads/Produto/Ampliada/237818.png");
 		
+		Drug drug4 = new Drug() ;
+		drug4.setId(4L);
+		drug4.setTitle("Benzetacil");
+		drug4.setValue("180,00");
+		drug4.setAmount("50");
+		drug4.setImage("https://www.acritica.com/uploads/news/image/105762/show_1.png");
 		
-		return Arrays.asList(drug1, drug2, drug3);
+		
+		return Arrays.asList(drug1, drug2, drug3, drug4);
 	}
 }
