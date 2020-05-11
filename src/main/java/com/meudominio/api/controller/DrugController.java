@@ -2,8 +2,8 @@ package com.meudominio.api.controller;
 
 import java.util.Arrays;
 import java.util.List;
-
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.meudominio.api.entities.Drug;
@@ -11,7 +11,7 @@ import com.meudominio.api.entities.Drug;
 @RestController // Define como uma classe que faz interações REST
 public class DrugController {
 
-	@GetMapping("/drugs") // Define a "rota" e marca
+	@RequestMapping(value = "/drugs", method = RequestMethod.GET) // Define a "rota" e marca
 	public List<Drug> listDrugs() {
 		
 		Drug drug1 = new Drug() ;
@@ -26,7 +26,7 @@ public class DrugController {
 		drug2.setTitle("Ibuprofeno");
 		drug2.setValue("20,00");
 		drug2.setAmount("8");
-		drug2.setImage("\"https://drogariavenancio.vteximg.com.br/arquivos/ids/563624-1000-1000/62897_Z.jpg?v=636966115928530000");
+		drug2.setImage("https://drogariavenancio.vteximg.com.br/arquivos/ids/563624-1000-1000/62897_Z.jpg?v=636966115928530000");
 		
 		Drug drug3 = new Drug() ;
 		drug3.setId(3L);
